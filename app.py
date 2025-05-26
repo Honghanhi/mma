@@ -7,8 +7,11 @@ import os
 
 app = Flask(__name__)
 
-# Khởi tạo mô hình ASL
-asl_model = Classifier("model_asl/keras_model.h5", "model_asl/labels.txt")
+# Đường dẫn model và nhãn nằm ở thư mục gốc
+MODEL_PATH = "keras_model.h5"
+LABELS_PATH = "labels.txt"
+
+asl_model = Classifier(MODEL_PATH, LABELS_PATH)
 detector = HandDetector(detectionCon=0.7)
 
 offset = 20
@@ -16,10 +19,8 @@ imgSize = 300
 
 def process_image(image_np):
     hands = detector.findHands(image_np, draw=False)
-
     if not hands:
         return None, None, "No hand detected"
-
     hand = hands[0]
     x, y, w, h = hand['bbox']
 
