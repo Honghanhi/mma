@@ -1,0 +1,8 @@
+opencv-python
+tensorflow
+mediapipe
+numpy
+mediapipe
+flask
+Pillow
+imutils
