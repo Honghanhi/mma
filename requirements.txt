@@ -1,8 +1,5 @@
-opencv-python
-tensorflow
-mediapipe
-numpy
-mediapipe
-flask
-Pillow
-imutils
+Flask==2.2.3
+numpy==1.24.3
+opencv-python-headless==4.7.0.72
+tensorflow==2.12.0
+mediapipe==0.10.0
